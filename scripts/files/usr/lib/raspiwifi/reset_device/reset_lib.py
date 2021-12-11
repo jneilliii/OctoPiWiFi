@@ -58,7 +58,7 @@ def update_ssid(ssid_prefix, serial_last_four):
 			for line in file:
 				if 'ssid=' in line:
 					line_array = line.split('=')
-					line_array[1] = ssid_prefix + ' ' + serial_last_four
+					line_array[1] = ssid_prefix + '-' + serial_last_four
 					print(line_array[0] + '=' + line_array[1])
 				else:
 					print(line, end = '')

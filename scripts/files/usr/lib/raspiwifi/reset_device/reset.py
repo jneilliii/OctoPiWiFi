@@ -1,12 +1,21 @@
 import os
+import re
 import time
 import subprocess
 import reset_lib
 
 counter = 0
+cpuinfo = subprocess.check_output(['cat', '/proc/cpuinfo']).decode('utf-8')
+
+serial_match = re.search(r"Serial\s+:\s(\S+)$", cpuinfo, re.MULTILINE)
+if serial_match:
+    serial_last_four = serial_match.group(1)[-4:]
+else:
+    serial_last_four = '0000'
+
 serial_last_four = subprocess.check_output(['cat', '/proc/cpuinfo'])[-5:-1].decode('utf-8')
 config_hash = reset_lib.config_file_hash()
-ssid_prefix = config_hash['ssid_prefix'] + " "
+ssid_prefix = config_hash['ssid_prefix']
 reboot_required = False
 
 
