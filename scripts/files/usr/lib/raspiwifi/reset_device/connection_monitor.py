@@ -37,7 +37,7 @@ else:
         # and octoprint is not currently printing trigger a reset into AP Host
         # (Configuration) mode.
         if no_conn_counter >= int(config_hash['auto_config_delay']):
-            printer_status = subprocess.check_output(['oprint/bin/octoprint', 'client', 'get', '/api/printer?exclude=temperature,sd']).decode('utf-8').split('\n')[1]
+            printer_status = subprocess.check_output(['/home/pi/oprint/bin/octoprint', 'client', 'get', '/api/printer?exclude=temperature,sd']).decode('utf-8').split('\n')[1]
             printer_status_match = re.search(r'"text":"(.+)"', printer_status)
             if printer_status_match:
                 printer_state = printer_status_match.group(1)
