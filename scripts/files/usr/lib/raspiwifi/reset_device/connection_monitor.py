@@ -2,10 +2,17 @@ import time
 import sys
 import os
 import reset_lib
+import logging
 
 no_conn_counter = 0
 consecutive_active_reports = 0
 config_hash = reset_lib.config_file_hash()
+logger = logging.getLogger('raspiwifi')
+f_handler = logging.FileHandler('raspiwifi.log')
+f_handler.setLevel(logging.DEBUG)
+f_format = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+f_handler.setFormatter(f_format)
+logger.addHandler(f_handler)
 
 # If auto_config is set to 0 in /etc/raspiwifi/raspiwifi.conf exit this script
 if config_hash['auto_config'] == "0":
@@ -39,11 +46,12 @@ else:
         if no_conn_counter >= int(config_hash['auto_config_delay']):
             printer_status = subprocess.check_output(['/home/pi/oprint/bin/octoprint', 'client', 'get', '/api/printer?exclude=temperature,sd']).decode('utf-8').split('\n')[1]
             printer_status_match = re.search(r'"text":"(.+)"', printer_status)
+            logger.debug(printer_status)
+            logger.debug(printer_status_match)
             if printer_status_match:
                 printer_state = printer_status_match.group(1)
             else:
                 printer_state = "unknown"
-            if printer_state not in ["Printing", "Paused", "Pausing"]:
-                reset_lib.reset_to_host_mode()
-            else:
-                no_conn_counter = 0
+            logger.debug(printer_state)
+            # if printer_state not in ["Printing", "Paused", "Pausing"]:
+            reset_lib.reset_to_host_mode()
