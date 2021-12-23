@@ -8,7 +8,7 @@ install_cleanup_trap
 
 apt install python3 python3-pip dnsmasq hostapd -y
 pip3 install flask pyopenssl
-cp -a /files/* /
+cp -a /files/root/* /
 mv /etc/wpa_supplicant/wpa_supplicant.conf /etc/wpa_supplicant/wpa_supplicant.conf.original
 mv /etc/dnsmasq.conf /etc/dnsmasq.conf.original
 cp /usr/lib/raspiwifi/reset_device/static_files/dnsmasq.conf /etc/
