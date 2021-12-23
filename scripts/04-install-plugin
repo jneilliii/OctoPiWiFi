@@ -8,4 +8,4 @@ install_cleanup_trap
 
 mkdir /home/pi/.octoprint/plugins/
 cp -a /files/raspiwifi.py /home/pi/.octoprint/plugins/
-chown pi ./.octoprint/plugins/
+chown pi /home/pi/.octoprint/plugins/
