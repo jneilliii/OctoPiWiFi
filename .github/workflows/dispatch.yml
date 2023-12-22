@@ -26,7 +26,7 @@ jobs:
       uses: pozetroninc/github-action-get-latest-release@master
       with:
         repository: OctoPrint/OctoPrint
-        excludes: draft
+        excludes: prerelease,draft
         token: ${{ secrets.REPODISPATCH_TOKEN }}
 
     - id: octopi_latestrelease
@@ -34,7 +34,7 @@ jobs:
       uses: pozetroninc/github-action-get-latest-release@master
       with:
         repository: guysoft/OctoPi
-        excludes: draft
+        excludes: prerelease,draft
         token: ${{ secrets.REPODISPATCH_TOKEN }}
 
     - name: 💁 Print Versions
