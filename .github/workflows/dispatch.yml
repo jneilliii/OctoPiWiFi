@@ -52,7 +52,6 @@ jobs:
         repository: jneilliii/OctoPiWiFi
         event-type: octoprint_release
         client-payload: '{"version": "${{ steps.octoprint_latestrelease.outputs.release }}"}'
-    - uses: actions/checkout@v4
     - uses: gautamkrishnar/keepalive-workflow@v2
       with:
         use_api: true
