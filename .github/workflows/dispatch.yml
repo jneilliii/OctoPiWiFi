@@ -4,8 +4,8 @@ on:
   schedule:
     - cron: "0 0 * * *"
   workflow_dispatch:
-permissions:
-  actions: write
+# permissions:
+#  actions: write
 jobs:
   build:
     name: "Check Versions"
@@ -52,6 +52,6 @@ jobs:
         repository: jneilliii/OctoPiWiFi
         event-type: octoprint_release
         client-payload: '{"version": "${{ steps.octoprint_latestrelease.outputs.release }}"}'
-    - uses: gautamkrishnar/keepalive-workflow@v2
-      with:
-        use_api: true
+#    - uses: gautamkrishnar/keepalive-workflow@v2
+#      with:
+#        use_api: true
