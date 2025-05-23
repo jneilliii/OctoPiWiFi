@@ -7,9 +7,9 @@ source /common.sh
 install_cleanup_trap
 
 apt install python3 python3-pip python3-flask -y
-cp -a -r /files/root/ /
+cp -a /files/root/* /
 mkdir -p /etc/cron.raspiwifi
-cp /usr/lib/raspiwifi/reset_device/static_files/aphost_bootstrapper /etc/cron.raspiwifi
+cp /files/root/usr/lib/raspiwifi/reset_device/static_files/aphost_bootstrapper /etc/cron.raspiwifi
 chmod +x /etc/cron.raspiwifi/aphost_bootstrapper
 echo "# RaspiWiFi Startup" >> /etc/crontab
 echo "@reboot root run-parts /etc/cron.raspiwifi/" >> /etc/crontab
