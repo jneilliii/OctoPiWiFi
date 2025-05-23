@@ -6,16 +6,10 @@ export LC_ALL=C
 source /common.sh
 install_cleanup_trap
 
-apt install python3 python3-pip dnsmasq hostapd -y
+apt install python3 python3-rpi.gpio python3-pip python3-flask -y
 pip3 install flask cryptography==36.0.0 pyopenssl
 cp -a /files/root/* /
-mv /etc/wpa_supplicant/wpa_supplicant.conf /etc/wpa_supplicant/wpa_supplicant.conf.original
-mv /etc/dnsmasq.conf /etc/dnsmasq.conf.original
-cp /usr/lib/raspiwifi/reset_device/static_files/dnsmasq.conf /etc/
-cp /usr/lib/raspiwifi/reset_device/static_files/hostapd.conf.wpa /etc/hostapd/hostapd.conf
-mv /etc/dhcpcd.conf /etc/dhcpcd.conf.original
-cp /usr/lib/raspiwifi/reset_device/static_files/dhcpcd.conf /etc/
-mkdir /etc/cron.raspiwifi
+mkdir -p /etc/cron.raspiwifi
 cp /usr/lib/raspiwifi/reset_device/static_files/aphost_bootstrapper /etc/cron.raspiwifi
 chmod +x /etc/cron.raspiwifi/aphost_bootstrapper
 echo "# RaspiWiFi Startup" >> /etc/crontab

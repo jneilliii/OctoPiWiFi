@@ -6,6 +6,6 @@ export LC_ALL=C
 source /common.sh
 install_cleanup_trap
 
-mkdir /home/pi/.octoprint/plugins/
-cp -a /files/raspiwifi.py /home/pi/.octoprint/plugins/
-chown pi /home/pi/.octoprint/plugins/
+# mkdir /home/pi/.octoprint/plugins/
+# cp -a /files/raspiwifi.py /home/pi/.octoprint/plugins/
+# chown pi /home/pi/.octoprint/plugins/
