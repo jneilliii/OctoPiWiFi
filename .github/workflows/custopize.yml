@@ -67,7 +67,7 @@ jobs:
           -v ${{ github.workspace }}/scripts/files/config.local:/CustoPiZer/config.local \
           -v ${{ github.workspace }}/build:/CustoPiZer/workspace \
           -v ${{ github.workspace }}/scripts:/CustoPiZer/workspace/scripts \
-          ghcr.io/octoprint/custopizer:1.2.0
+          ghcr.io/octoprint/custopizer:1.4.0
 
     - name: "📦 Package the image"
       run: |
