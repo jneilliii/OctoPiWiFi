@@ -87,17 +87,17 @@ def create_nm_connection(ssid, wifi_key):
         os.system('nmcli con modify ' + ssid + ' wifi-sec.psk ' + wifi_key)
 
 def set_ap_host_mode():
-    os.system('nmcli con up wifi-hotspot')
+    os.system('nmcli con up OctoPiWiFi')
 
 def set_ap_client_mode(ssid):
     os.system('nmcli con up ' + ssid)
 
 def update_wpa(wpa_enabled, wpa_key):
     if wpa_enabled:
-        os.system('nmcli con modify wifi-hotspot wifi-sec.key-mgmt wpa-psk')
-        os.system('nmcli con modify wifi-hotspot wifi-sec.psk "' + wpa_key + '"')
+        os.system('nmcli con modify OctoPiWiFi wifi-sec.key-mgmt wpa-psk')
+        os.system('nmcli con modify OctoPiWiFi wifi-sec.psk "' + wpa_key + '"')
     else:
-        os.system('nmcli con modify wifi-hotspot wifi-sec.key-mgmt none')
+        os.system('nmcli con modify OctoPiWiFi wifi-sec.key-mgmt none')
 
 
 def config_file_hash():

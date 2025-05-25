@@ -21,4 +21,4 @@ def is_wifi_active():
 	return wifi_active
 
 def enable_host_mode():
-	os.system('nmcli con up wifi-hotspot')
+	os.system('nmcli con up OctoPiWifi')

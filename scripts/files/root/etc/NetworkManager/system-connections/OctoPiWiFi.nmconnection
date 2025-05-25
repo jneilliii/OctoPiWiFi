@@ -1,5 +1,5 @@
 [connection]
-id=wifi-hotspot
+id=OctoPiWiFi
 uuid=5272001a-3ad5-4eb0-a249-3a7fbefe8111
 type=wifi
 autoconnect-priority=-999
