@@ -7,7 +7,7 @@ source /common.sh
 install_cleanup_trap
 
 echo "pi ALL=NOPASSWD: /usr/bin/nmcli" > /etc/sudoers.d/octopiwifi
-echo "pi ALL=NOPASSWD: /sbin/iw" > /etc/sudoers.d/octopiwifi
-echo "pi ALL=NOPASSWD: /sbin/iwlist" > /etc/sudoers.d/octopiwifi
-echo "pi ALL=NOPASSWD: /usr/sbin/iw" > /etc/sudoers.d/octopiwifi
-echo "pi ALL=NOPASSWD: /usr/sbin/iwlist" > /etc/sudoers.d/octopiwifi
+echo "pi ALL=NOPASSWD: /sbin/iw" >> /etc/sudoers.d/octopiwifi
+echo "pi ALL=NOPASSWD: /sbin/iwlist" >> /etc/sudoers.d/octopiwifi
+echo "pi ALL=NOPASSWD: /usr/sbin/iw" >> /etc/sudoers.d/octopiwifi
+echo "pi ALL=NOPASSWD: /usr/sbin/iwlist" >> /etc/sudoers.d/octopiwifi
