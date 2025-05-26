@@ -7,4 +7,3 @@ source /common.sh
 install_cleanup_trap
 
 cp -a /files/root/* /
-nmcli connection reload
