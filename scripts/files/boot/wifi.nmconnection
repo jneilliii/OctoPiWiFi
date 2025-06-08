@@ -1,6 +1,7 @@
+# Uncomment everything below this line and set your ssid and password
 [connection]
-id=OctoPiWiFi
-uuid=5272001a-3ad5-4eb0-a249-3a7fbefe8111
+id=wifi
+uuid=593819b8-135a-4a3e-9611-c36cdeadbeef
 type=wifi
 autoconnect-priority=-999
 interface-name=wlan0
