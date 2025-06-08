@@ -1,6 +1,6 @@
 # Uncomment everything below this line and set your ssid and password
 [connection]
-id=wifi
+id=OctoPiWiFi
 uuid=593819b8-135a-4a3e-9611-c36cdeadbeef
 type=wifi
 autoconnect-priority=-999
@@ -8,20 +8,18 @@ interface-name=wlan0
 permissions=
 
 [wifi]
+cloned-mac-address=00:12:34:56:78:9A
 band=bg
-channel=1
-mac-address-blacklist=
+channel=3
 mode=ap
 ssid=OctoPiWiFi
 
 [ipv4]
 address1=10.0.0.1/24
-dns-search=
 method=shared
 
 [ipv6]
 addr-gen-mode=stable-privacy
-dns-search=
 method=disabled
 
 [proxy]
