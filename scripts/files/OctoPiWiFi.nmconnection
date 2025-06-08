@@ -14,6 +14,10 @@ channel=3
 mode=ap
 ssid=OctoPiWiFi
 
+[wifi-security]
+key-mgmt=wpa-psk
+psk=raspberry
+
 [ipv4]
 address1=10.0.0.1/24
 method=shared
