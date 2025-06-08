@@ -5,10 +5,8 @@ uuid=593819b8-135a-4a3e-9611-c36cdeadbeef
 type=wifi
 autoconnect-priority=-999
 interface-name=wlan0
-permissions=
 
 [wifi]
-cloned-mac-address=00:12:34:56:78:9A
 band=bg
 channel=3
 mode=ap
@@ -19,7 +17,7 @@ key-mgmt=wpa-psk
 psk=raspberry
 
 [ipv4]
-address1=10.0.0.1/24
+address1=10.10.10.1/24,10.10.10.1
 method=shared
 
 [ipv6]
